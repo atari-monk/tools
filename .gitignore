@@ -2,3 +2,4 @@
 .ruff_cache/
 tools.egg-info
 __pycache__
+docs/empty.md

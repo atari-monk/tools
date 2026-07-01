@@ -1,0 +1,4 @@
+- Write a cli tool in py
+- Take time in sec or min
+- Sound loud alaram after time runs out
+- Give some popup on top so there is also visual alarm

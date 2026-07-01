@@ -2,6 +2,13 @@
 name = "tools"
 version = "0.1.0"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+prompt = "prompt_tool.cli:main"
+alarm = "alarm_tool.cli:main"
+
 [tool.black]
 line-length = 88
 target-version = ["py311"]
@@ -13,6 +20,3 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
 ignore = []
-
-[project.scripts]
-prompt = "prompt_tool.cli:main"

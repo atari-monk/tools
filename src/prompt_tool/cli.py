@@ -11,13 +11,14 @@ FilesContext: TypeAlias = dict[str, list[str]]
 
 
 PROMPTS: dict[str, str] = {
-    "implementation": "Implementation prompt (code generation)",
-    "requirements-implementation": "Implementation with requirements checklist",
-    "analysis": "Architecture and design analysis",
+    "question": "Answer my question",
+    "implementation": "Implement requirements (code generation)",
 }
 
 PROJECTS: dict[str, str] = {
     "tools": "Tools project",
+    "simple-sprite": "Sprite generator",
+    "box-game": "Mini game about sorting boxes",
     "bowling-game": "Mini game about bowling",
 }
 

@@ -1,29 +1,21 @@
 {
-    "implementation": {
-        "rules": [
-            "/home/atari-monk/atari-monk/project/prompts/rules/code.md",
-            "/home/atari-monk/atari-monk/project/prompts/rules/python-code.md"
+    "question": {
+        "question": [
+            ""
         ],
-        "feature": [
-            "/home/atari-monk/atari-monk/project/tools/docs/en/prompt-tool/spec.md"
-        ],
-        "codebase": [
-            "/home/atari-monk/atari-monk/project/tools/prompt_tool/cli.py"
+        "context": [
+            ""
         ]
     },
-    "requirements-implementation": {
+    "implementation": {
         "rules": [
-            "/home/atari-monk/atari-monk/project/prompts/rules/code.md",
-            "/home/atari-monk/atari-monk/project/prompts/rules/python-code.md"
-        ],
-        "specification": [
-            "/home/atari-monk/atari-monk/project/tools/docs/en/prompt-tool/specification.md"
+            "/home/atari-monk/atari-monk/project/prompts/rules/code.md"
         ],
         "requirements": [
-            "/home/atari-monk/atari-monk/project/tools/docs/en/prompt-tool/requirements.md"
+            "/home/atari-monk/atari-monk/project/tools/docs/en/alarm-tool/spec.md"
         ],
         "codebase": [
-            "/home/atari-monk/atari-monk/project/tools/prompt_tool/cli.py"
+            "/home/atari-monk/atari-monk/project/tools/docs/empty.md"
         ]
     }
 }
