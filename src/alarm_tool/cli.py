@@ -2,6 +2,7 @@ import argparse
 import subprocess
 import threading
 import time
+from datetime import datetime
 
 
 def parse_duration(value: str) -> int:
@@ -19,7 +20,13 @@ def parse_duration(value: str) -> int:
     return int(float(value))
 
 
+def timestamp() -> str:
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
 def countdown(seconds: int) -> None:
+    print(f"Start: {timestamp()}")
+
     while seconds > 0:
         mins, secs = divmod(seconds, 60)
         print(f"\rRemaining: {mins:02d}:{secs:02d}", end="", flush=True)
@@ -27,6 +34,7 @@ def countdown(seconds: int) -> None:
         seconds -= 1
 
     print("\rRemaining: 00:00")
+    print(f"End:   {timestamp()}")
 
 
 def play_alarm() -> None:
