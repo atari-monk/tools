@@ -3,3 +3,4 @@
 tools.egg-info
 __pycache__
 docs/empty.md
+docs/prompt.md

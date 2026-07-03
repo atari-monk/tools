@@ -12,10 +12,10 @@
             "/home/atari-monk/atari-monk/project/prompts/rules/code.md"
         ],
         "requirements": [
-            "/home/atari-monk/atari-monk/project/tools/docs/en/alarm-tool/spec.md"
+            "/home/atari-monk/atari-monk/project/tools/docs/prompt.md"
         ],
         "codebase": [
-            "/home/atari-monk/atari-monk/project/tools/src/alarm_tool/cli.py"
+            "/home/atari-monk/atari-monk/project/tools/docs/empty.md"
         ]
     }
 }

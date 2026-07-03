@@ -1,6 +1,9 @@
 [project]
 name = "tools"
 version = "0.1.0"
+dependencies = [
+    "Pillow"
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -8,6 +11,9 @@ where = ["src"]
 [project.scripts]
 prompt = "prompt_tool.cli:main"
 alarm = "alarm_tool.cli:main"
+sprite = "sprite_tool.cli:main"
+resize = "resize_tool.cli:main"
+frame = "frame_tool.cli:main"
 
 [tool.black]
 line-length = 88
