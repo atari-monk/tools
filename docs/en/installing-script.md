@@ -18,6 +18,14 @@ pipx ensurepath
 
 Deactivate venv, then:
 
+```sh
+deactivate
+```
+
+```sh
+pipx uninstall tools
+```
+
 ```bash
 pipx install -e .
 ```

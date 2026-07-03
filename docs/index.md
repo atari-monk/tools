@@ -8,17 +8,14 @@
 
 ### Scripts
 
-- Prompt Tool:
-    - [Specification](en/prompt-tool/specification.md)
-    - [Requirements](en/prompt-tool/requirements.md)
-    - [Implementation](en/prompt-tool/implementation.md)
+- [Log](en/log.md)
 
 ### Python
 
-- [Raw json](en/python/raw-json.md)
+- [Raw json](en/raw-json.md)
 
 ---
 
-- [Back to Dev Notes](https://atari-monk.github.io/dev-notes/)
+- [Dev Notes](https://atari-monk.github.io/dev-notes/)
 
 ---

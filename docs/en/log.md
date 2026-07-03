@@ -1,0 +1,72 @@
+## Log
+
+### Prompt
+
+Template example:
+
+```md
+## Some text
+
+Some text
+
+## Some text
+
+[[key]]
+
+## Some text
+
+[[other-key]]
+```
+
+Map example:
+
+```json
+{
+    "prompt-name": {
+        "key": [
+            "absolute file path",
+            "absolute file path"
+        ],
+        "other-key": [
+            "absolute file path"
+        ]
+    }
+}
+```
+
+---
+
+- Hard code set of prompt template names with description
+- Hard code set of project names with description
+- Take template and project args as positionals: `prompt prompt-name project-name`
+- Load template from `absolute path/{prompt arg}.md`
+- Load prompt map from `absolute path/{project arg}/.config/prompt-map.json`
+- Load files content
+- Inject files content to placeholders in template by key
+- Each file is injected with separator between them
+- For files with code use markdown code blocks with language marker
+- For files with code print absolute path before block if flag `-cp --code-path` is used
+- List prompts and projects with `prompt list`
+- Print result in console if flag `-p --print` is used 
+- Put result in clipboard (on ubuntu)
+- Make it cli command with help
+- Command typed with mistake or no args should print help
+
+### Alarm
+
+- Write a cli tool in py
+- Take time in sec or min
+- Sound loud alaram after time runs out
+- Give some popup on top so there is also visual alarm
+- Print datetime before Remaining: 00:00
+- Print datetime after Remaining: reaches its time, becouse pomodoro dosent start righit away sometimes and i need to have times logged in console
+
+### Frame
+
+- Cli py script
+- Generator for 256x256 png image with transparent background
+- Take how many
+- Wrtie centered big nr in each generated frame
+- Take full path to folder where to generate files
+- Take file name and generate name_0, name_1, ...
+- Take color for nr color (add red, white, black and main ones and use name as arg)
