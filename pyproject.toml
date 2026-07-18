@@ -14,6 +14,7 @@ alarm = "alarm_tool.cli:main"
 sprite = "sprite_tool.cli:main"
 resize = "resize_tool.cli:main"
 frame = "frame_tool.cli:main"
+rename = "rename_tool.cli:main"
 
 [tool.black]
 line-length = 88
