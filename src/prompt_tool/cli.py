@@ -20,6 +20,7 @@ PROJECTS: dict[str, str] = {
     "simple-sprite": "Sprite generator",
     "box-game": "Mini game about sorting boxes",
     "bowling-game": "Mini game about bowling",
+    "pong-game": "Mini classic pong game"
 }
 
 PROMPTS_ROOT = Path("/home/atari-monk/atari-monk/project/prompts/prompts")

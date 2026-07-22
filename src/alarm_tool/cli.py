@@ -3,6 +3,9 @@ import subprocess
 import threading
 import time
 from datetime import datetime
+from pathlib import Path
+
+LOG_FILE = Path("/home/atari-monk/atari-monk/project/dev-notes/en/alarm-log.md")
 
 
 def parse_duration(value: str) -> int:
@@ -24,8 +27,12 @@ def timestamp() -> str:
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
+def date_string() -> str:
+    return datetime.now().strftime("%Y-%m-%d")
+
+
 def countdown(seconds: int) -> None:
-    print(f"Start: {timestamp()}")
+    print(f"start: {timestamp()}")
 
     while seconds > 0:
         mins, secs = divmod(seconds, 60)
@@ -34,7 +41,7 @@ def countdown(seconds: int) -> None:
         seconds -= 1
 
     print("\rRemaining: 00:00")
-    print(f"End:   {timestamp()}")
+    print(f"stop: {timestamp()}")
 
 
 def play_alarm() -> None:
@@ -72,6 +79,54 @@ def show_alert() -> None:
     )
 
 
+def ensure_date_header() -> None:
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    if LOG_FILE.exists():
+        content = LOG_FILE.read_text(encoding="utf-8")
+    else:
+        content = ""
+
+    header = f"## {date_string()}"
+
+    if header in content:
+        return
+
+    with LOG_FILE.open("a", encoding="utf-8") as f:
+        if content and not content.endswith("\n"):
+            f.write("\n")
+        if content:
+            f.write("\n")
+        f.write(f"{header}\n\n")
+
+
+def next_pomodoro_number() -> int:
+    content = LOG_FILE.read_text(encoding="utf-8") if LOG_FILE.exists() else ""
+
+    header = f"## {date_string()}"
+    if header not in content:
+        return 1
+
+    section = content.split(header, 1)[1]
+    section = section.split("\n## ", 1)[0]
+
+    count = 0
+    for line in section.splitlines():
+        if line.startswith("- Pomodoro "):
+            count += 1
+
+    return count + 1
+
+
+def append_pomodoro(description: str) -> None:
+    ensure_date_header()
+
+    number = next_pomodoro_number()
+
+    with LOG_FILE.open("a", encoding="utf-8") as f:
+        f.write(f"- Pomodoro {number} — {description}\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="CLI timer with alarm")
     parser.add_argument("time", help="Examples: 30, 45s, 90sec, 2m, 5min")
@@ -81,6 +136,9 @@ def main() -> None:
 
     if duration <= 0:
         raise SystemExit("Time must be greater than zero.")
+
+    description = input("What are you going to work on? ").strip()
+    append_pomodoro(description)
 
     countdown(duration)
 

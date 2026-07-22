@@ -2,5 +2,5 @@
 .ruff_cache/
 tools.egg-info
 __pycache__
-docs/empty.md
-docs/prompt.md
+docs/_empty.md
+docs/_prompt.md
