@@ -82,22 +82,18 @@ def show_alert() -> None:
 def ensure_date_header() -> None:
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    if LOG_FILE.exists():
-        content = LOG_FILE.read_text(encoding="utf-8")
-    else:
-        content = ""
-
+    content = LOG_FILE.read_text(encoding="utf-8") if LOG_FILE.exists() else ""
     header = f"## {date_string()}"
 
     if header in content:
         return
 
-    with LOG_FILE.open("a", encoding="utf-8") as f:
+    with LOG_FILE.open("a", encoding="utf-8") as file:
         if content and not content.endswith("\n"):
-            f.write("\n")
+            file.write("\n")
         if content:
-            f.write("\n")
-        f.write(f"{header}\n\n")
+            file.write("\n")
+        file.write(f"{header}\n\n")
 
 
 def next_pomodoro_number() -> int:
@@ -110,10 +106,9 @@ def next_pomodoro_number() -> int:
     section = content.split(header, 1)[1]
     section = section.split("\n## ", 1)[0]
 
-    count = 0
-    for line in section.splitlines():
-        if line.startswith("- Pomodoro "):
-            count += 1
+    count = sum(
+        1 for line in section.splitlines() if line.startswith("- Pomodoro ")
+    )
 
     return count + 1
 
@@ -123,13 +118,25 @@ def append_pomodoro(description: str) -> None:
 
     number = next_pomodoro_number()
 
-    with LOG_FILE.open("a", encoding="utf-8") as f:
-        f.write(f"- Pomodoro {number} — {description}\n")
+    with LOG_FILE.open("a", encoding="utf-8") as file:
+        file.write(f"- Pomodoro {number} — {description}\n")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="CLI timer with alarm")
-    parser.add_argument("time", help="Examples: 30, 45s, 90sec, 2m, 5min")
+    parser.add_argument(
+        "-t",
+        "--time",
+        required=True,
+        help="Examples: 30, 45s, 90sec, 2m, 5min",
+    )
+    parser.add_argument(
+        "-d",
+        "--description",
+        required=True,
+        help="Work description",
+    )
+
     args = parser.parse_args()
 
     duration = parse_duration(args.time)
@@ -137,8 +144,7 @@ def main() -> None:
     if duration <= 0:
         raise SystemExit("Time must be greater than zero.")
 
-    description = input("What are you going to work on? ").strip()
-    append_pomodoro(description)
+    append_pomodoro(args.description.strip())
 
     countdown(duration)
 
