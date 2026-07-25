@@ -1,10 +1,10 @@
 {
     "question": {
         "question": [
-            "/home/atari-monk/atari-monk/project/tools/docs/en/alarm-tool/ai-agent-rdy.md"
+            ""
         ],
         "context": [
-            "/home/atari-monk/atari-monk/project/tools/src/alarm_tool/cli.py"
+            ""
         ]
     },
     "implementation": {
@@ -12,7 +12,7 @@
             "/home/atari-monk/atari-monk/project/prompts/rules/code.md"
         ],
         "requirements": [
-            "/home/atari-monk/atari-monk/project/tools/docs/en/alarm-tool/ai-agent-rdy.md"
+            "/home/atari-monk/atari-monk/project/tools/docs/en/alarm-tool.md"
         ],
         "codebase": [
             "/home/atari-monk/atari-monk/project/tools/src/alarm_tool/cli.py"

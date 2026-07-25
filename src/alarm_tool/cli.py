@@ -96,30 +96,11 @@ def ensure_date_header() -> None:
         file.write(f"{header}\n\n")
 
 
-def next_pomodoro_number() -> int:
-    content = LOG_FILE.read_text(encoding="utf-8") if LOG_FILE.exists() else ""
-
-    header = f"## {date_string()}"
-    if header not in content:
-        return 1
-
-    section = content.split(header, 1)[1]
-    section = section.split("\n## ", 1)[0]
-
-    count = sum(
-        1 for line in section.splitlines() if line.startswith("- Pomodoro ")
-    )
-
-    return count + 1
-
-
-def append_pomodoro(description: str) -> None:
+def append_log(description: str) -> None:
     ensure_date_header()
 
-    number = next_pomodoro_number()
-
     with LOG_FILE.open("a", encoding="utf-8") as file:
-        file.write(f"- Pomodoro {number} — {description}\n")
+        file.write(f"- {description}\n")
 
 
 def main() -> None:
@@ -144,7 +125,7 @@ def main() -> None:
     if duration <= 0:
         raise SystemExit("Time must be greater than zero.")
 
-    append_pomodoro(args.description.strip())
+    append_log(args.description.strip())
 
     countdown(duration)
 
