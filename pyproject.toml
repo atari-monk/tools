@@ -16,6 +16,7 @@ resize = "resize_tool.cli:main"
 frame = "frame_tool.cli:main"
 rename = "rename_tool.cli:main"
 inject = "inject_tool.cli:main"
+extract = "extract_tool.cli:main"
 
 [tool.black]
 line-length = 88
