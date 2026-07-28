@@ -1,0 +1,34 @@
+[
+    {
+        "name": "alarm",
+        "description": "pomodoro or any time based alarm"
+    },
+    {
+        "name": "extract",
+        "description": "extracts message and lines nr form pylance problems info"
+    },
+    {
+        "name": "frame",
+        "description": "sprite related"
+    },
+    {
+        "name": "inject",
+        "description": "injects file to a template"
+    },
+    {
+        "name": "prompt",
+        "description": "generates prompt"
+    },
+    {
+        "name": "rename",
+        "description": "rename files"
+    },
+    {
+        "name": "resize",
+        "description": "resize image"
+    },
+    {
+        "name": "sprite",
+        "description": "merges images to a sprite"
+    }
+]
