@@ -19,6 +19,7 @@ inject = "inject_tool.cli:main"
 extract = "extract_tool.cli:main"
 list = "list_tool.cli:main"
 paths = "paths_tool.cli:main"
+cli = "cli_tool.cli:main"
 
 [tool.black]
 line-length = 88

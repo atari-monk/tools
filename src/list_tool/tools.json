@@ -30,5 +30,9 @@
     {
         "name": "sprite",
         "description": "merges images to a sprite"
+    },
+    {
+        "name": "cli",
+        "description": "automates adding new cli tool to tools project"
     }
 ]
