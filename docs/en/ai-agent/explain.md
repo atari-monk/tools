@@ -1,8 +1,0 @@
-- Explain ai agent
-- Do not write code
-- Just pseudo code if u need
-- Show me state of the art state of it
-- What these guys define it as 
-- What for it is used
-- Focus on giving most information in way that easy to digest
-- Use only text becouse i want to use voice
