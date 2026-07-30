@@ -1,0 +1,25 @@
+{
+    "prompts": [
+        {
+            "name": "Remove Pylance erorrs from code",
+            "content": [
+                "Using info on pylance errors, try to remove them from code",
+                "Code is used by other parts of system"
+            ]
+        },
+        {
+            "name": "Check code understanding",
+            "content": [
+                "I have read my code base and made comments",
+                "Check if i understand the code correctly"
+            ]
+        },
+        {
+            "name": "Check and fix implementation",
+            "content": [
+                "Given full context provided, check if implementation is correct",
+                "Implement fixes if something is missing or incorect"
+            ]
+        }
+    ]
+}

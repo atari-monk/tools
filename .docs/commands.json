@@ -1,0 +1,15 @@
+{
+    "commands": [
+        {
+            "name": "chromium-agent",
+            "description": [
+                "Launches Chromium with remote debugging enabled and a separate profile for an agent"
+            ],
+            "command": [
+                "chromium",
+                "--remote-debugging-port=9222",
+                "--user-data-dir=$HOME/.chatgpt-agent"
+            ]
+        }
+    ]
+}

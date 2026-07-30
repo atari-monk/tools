@@ -34,5 +34,9 @@
     {
         "name": "cli",
         "description": "automates adding new cli tool to tools project"
+    },
+    {
+        "name": "srs",
+        "description": "write requirements with structure"
     }
 ]
