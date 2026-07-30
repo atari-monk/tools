@@ -114,7 +114,7 @@ def copy_to_clipboard(text: str) -> None:
 def build_prompt(prompt_name: str, project_name: str, show_code_path: bool) -> str:
     template_path = PROMPTS_ROOT / f"{prompt_name}.md"
 
-    map_path = PROJECTS_ROOT / project_name / ".config" / "prompt-map.json"
+    map_path = PROJECTS_ROOT / project_name / ".prompt" / "prompt-map.json"
 
     template = load_markdown(template_path)
     paths = load_paths(map_path, prompt_name)
